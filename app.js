@@ -3,93 +3,97 @@
 var counterCorrect = 0;
 
 //WELCOME
-function one () {
+function welcome () {
   var user = prompt('Oh hey! What\'s your name?');
   console.log('username: ' + user);
 
 
   alert('Welcome to the game, ' + user + '! It\'s called, \'Who in the World Is Rae Rae?\' Please respond to the following statements with True or False.');
 }
-one ();
-//QUESTION ONE
-function two () {
-  var answerOne = prompt('Although I\'ve lived in three different countries, I consider Seattle my homebase for probably ever. True/False?');
+welcome ();
+// //QUESTION ONE
+function one () {
+  var answerOne = prompt('Seattle is my favorite. True/False?');
   console.log('questionOne: ' + answerOne);
 
   if (answerOne.toLowerCase() === 'true') {
     alert('Correct! I have lived in Italy, Costa Rica, and Ireland, but PNW is best.');
     counterCorrect++;
   } else if (answerOne.toLowerCase() === 'false') {
-    alert('Incorrect - I\'m more nomadic than you think, ' + user + '. Keep trying!');
+    alert('Incorrect - I wear more flannel than you might think, ' + user + '. Keep trying!');
   } else {
-    alert ('Sorry! That is not a valid answer');
+    alert ('Sorry! That is not a valid answer - remember to use True or False on the next one!');
   }
 }
-two ();
-//QUESTION TWO
-function three () {
-  var answerTwo = prompt('I have a graduate degree in Music.');
+one ();
+debugger;
+// //QUESTION TWO
+function two () {
+  var answerTwo = prompt('True or False: I have a graduate degree in Computer Science.');
   console.log('questionTwo: ' + answerTwo);
 
   if (answerTwo.toLowerCase() === 'true') {
-    alert('Not quite - I have my BS in Piano Performance, and a graduate certificate in Photography.');
-  } else if (answerOne.toLowerCase() === 'false') {
-    alert('Impressive. Can\'t slip anything past you!');
+    alert('Actually, I have my BS in Piano Performance, and a graduate certificate in Photography.');
+  } else if (answerTwo.toLowerCase() === 'false') {
+    alert('Impressive. How did you already know that?!');
     counterCorrect++;
+  } else {
+    alert ('Sorry! That is not a valid answer - remember to use True or False on the next one!');
   }
 }
-three ();
-//QUESTION THREE
-function four () {
-  var answerThree = prompt('You almost know me now...just a few more - I have taught yoga and led teacher trainings for the last eight years.');
+two ();
+// //QUESTION THREE
+function three () {
+  var answerThree = prompt('You almost know me now...just a few more - I have taught yoga and led teacher trainings for the last eight years. True or False?');
   console.log('questionThree: ' + answerThree);
 
   if (answerThree.toLowerCase() === 'true') {
     alert('That\'s right - and I still teach here in Seattle at hauteyoga.');
     counterCorrect++;
-  } else if (answerOne.toLowerCase() === 'false'){
+  } else if (answerThree.toLowerCase() === 'false'){
     alert('Guess again! I teach and practice yoga every day.');
   } else {
-    alert ('Sorry! That is not a valid answer');
+    alert('Sorry! Still gotta use True or False, okay?');
   }
 }
-four ();
-//QUESTION FOUR
-function five () {
-  var answerFour = prompt('We are almost to friend level, how about this one: I can\'t cook to save my life.');
+three ();
+// //QUESTION FOUR
+function four () {
+  var answerFour = prompt('We are almost to friend level, how about this one: I\'m an amazing cook.');
   console.log('questionFour: ' + answerFour);
 
   if (answerFour.toLowerCase() === 'true') {
-    alert('Yep. It\'s true. I only have takeout skillz.');
-    counterCorrect++;
-  } else if (answerOne.toLowerCase() === 'false') {
     alert('I appreciate your faith in me, but that is the wrong answer.');
+    counterCorrect++;
+  } else if (answerFour.toLowerCase() === 'false') {
+    alert('You caught me...I only have takout skillz.');
   } else {
-    alert ('Sorry! That is not a valid answer');
+    alert('Sorry! That is not a valid answer');
+  }
 }
-five ();
-//QUESTION FIVE
-function six () {
-  var answerFive = prompt('I love to hike, surf, climb, and ski.');
+four ();
+// //QUESTION FIVE
+function five () {
+  var answerFive = prompt('I love being inside all the time.');
   console.log('questionFive: ' + answerFive);
 
   if (answerFive.toLowerCase() === 'true') {
-    alert('Correct. These hobbies come from my Nordic heritage.');
+    alert('Incorrect. Most of my hobbies come from an adventurous Nordic heritage.');
     counterCorrect++;
-  } else if (answerOne.toLowerCase() === 'false') {
-    alert('Fail. My grandparents were Vikings from Oslo, and I am all about adventure at all times.');
+  } else if (answerFive.toLowerCase() === 'false') {
+    alert('You better believe it. My grandparents were Vikings, so outdoor adventure at all times is how I roll.');
   }
 }
-six ();
-//QUESTION SIX
-
-function seven () {
+five ();
+// //QUESTION SIX
+//
+function six () {
   var luckyNumber = 7;
 
   for (var i = 0; i < 4; i++) {
     var answerSix = parseInt(prompt('What do you think my lucky number is?'));
     if(answerSix === luckyNumber) {
-      alert('Great job! You must be psychic.');
+      alert('Great job! Now you have my password to everything...');
       counterCorrect++;
       break;
     } else if(answerSix > luckyNumber) {
@@ -100,7 +104,7 @@ function seven () {
       alert('That is not a valid response.');
     }
     if(i === 1) {
-      alert('Nope, but you still have time.');
+      alert('Keep trying. You still have time.');
     }
     if(i === 2) {
       alert('Don\'t give up! You still have one more guess left.');
@@ -110,47 +114,22 @@ function seven () {
     }
   }
 }
-seven ();
-//QUESTION SEVEN
-function eight () {
+six ();
+// // // //QUESTION SEVEN
+function seven () {
   var states = ['Washington', 'California', 'Idaho'];
-  var answerSeven = prompt('Try to guess one other state that I have lived in?');
+  var answerSeven = prompt('Last question: try to guess one other state that I have lived in?');
 
   for (var i = 0; i < states.length; i++) {
     console.log('lived in: ', states[i]);
 
     if (answerSeven === states[i]) {
-      alert('True! How did you know?');
+      alert('True! You win.');
+      counterCorrect++;
       break;
+    } else {
+      alert('Sorry! But thanks for playing!');
     }
   }
-
-  if (!flag) {
-    alert('Not quite, but nice try!');
-  }
 }
-eight ();
-
-
-
-
-
-
-
-// var number;
-// var counter = 1;
-//
-// while (number !== 31) {
-//   number = parseInt(prompt('How old do you think I am?'));
-//
-//   if (number < 31) {
-//     alert('You\'re sweet, but you guessed too low...');
-//     counter++;
-//   } else if (number > 31) {
-//     alert('Come on, I\'m not an old lady yet! You guessed too high');
-//   } else if (number === NaN) {
-//     alert('Enter an actual number please.');
-//     counter++;
-//   }
-// }
-// console.log('counter:', counter);
+seven ();
